@@ -257,3 +257,37 @@ class Bank{
   }
 }
 
+void main(List<String> args) {
+  Bank bank = Bank();
+
+  var sav = SavingsAccount(1001, "RAm Tamang", 2000);
+  var prem = PremiumAccount(2002, "Hari Katwal", 500000);
+  var check = CheckingAccount(3003, "Arti Mdhr", 4000);
+  var std = StudentAccount(1234, "Simon Rai", 2000);
+
+  bank.addAccount(sav);
+  bank.addAccount(prem);
+  bank.addAccount(check);
+  bank.addAccount(std);
+
+
+  sav.deposit(200);
+  sav.withdraw(1700);
+  sav.withdraw(500);
+
+
+  check.withdraw(4000); 
+
+  std.deposit(2000);
+  std.withdraw(100);
+
+  prem.withdraw(6000); // Fails: Cannot withdraw below minimum balance
+
+  bank.applyMonthlyInterest();
+
+  bank.transfer(1001, 2002, 100);
+  bank.transfer(1002, 2002, 1000);
+
+  bank.generateReport();
+
+}
