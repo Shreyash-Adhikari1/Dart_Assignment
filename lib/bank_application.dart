@@ -260,7 +260,7 @@ class Bank{
 void main(List<String> args) {
   Bank bank = Bank();
 
-  var sav = SavingsAccount(1001, "RAm Tamang", 2000);
+  var sav = SavingsAccount(1001, "Ram Tamang", 2000);
   var prem = PremiumAccount(2002, "Hari Katwal", 500000);
   var check = CheckingAccount(3003, "Arti Mdhr", 4000);
   var std = StudentAccount(1234, "Simon Rai", 2000);
@@ -281,7 +281,7 @@ void main(List<String> args) {
   std.deposit(2000);
   std.withdraw(100);
 
-  prem.withdraw(6000); // Fails: Cannot withdraw below minimum balance
+  prem.withdraw(6000);
 
   bank.applyMonthlyInterest();
 
